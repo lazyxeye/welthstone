@@ -34,12 +34,12 @@ const WealthstoneLogo: React.FC<WealthstoneLogoProps> = ({
           className="stroke-accent-gold"
         />
         
-        {/* "WS" inside the square */}
+        {/* "WS" inside the square - increased spacing */}
         <text 
-          x="12" 
+          x="10" 
           y="42" 
           fontFamily="Inter, sans-serif" 
-          fontSize="28" 
+          fontSize="26" 
           fill="currentColor"
           fontWeight="bold"
           className="fill-accent-gold"
@@ -47,10 +47,10 @@ const WealthstoneLogo: React.FC<WealthstoneLogoProps> = ({
           W
         </text>
         <text 
-          x="28" 
+          x="32" 
           y="42" 
           fontFamily="Inter, sans-serif" 
-          fontSize="28" 
+          fontSize="26" 
           fill="currentColor"
           fontWeight="bold"
           className="fill-accent-gold"
@@ -82,12 +82,12 @@ const WealthstoneLogo: React.FC<WealthstoneLogoProps> = ({
         className="stroke-accent-gold"
       />
 
-      {/* "WS" inside the square */}
+      {/* "WS" inside the square - increased spacing */}
       <text 
-        x="13" 
+        x="11" 
         y="37" 
         fontFamily="Inter, sans-serif" 
-        fontSize="20" 
+        fontSize="18" 
         fill="currentColor"
         fontWeight="bold"
         className="fill-accent-gold"
@@ -95,10 +95,10 @@ const WealthstoneLogo: React.FC<WealthstoneLogoProps> = ({
         W
       </text>
       <text 
-        x="25" 
+        x="28" 
         y="37" 
         fontFamily="Inter, sans-serif" 
-        fontSize="20" 
+        fontSize="18" 
         fill="currentColor"
         fontWeight="bold"
         className="fill-accent-gold"
