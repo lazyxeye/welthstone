@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { translations, Translations } from '../i18n/translations';
 
-type Language = 'en' | 'he' | 'fr' | 'ru';
+type Language = 'en' | 'he' | 'fr' | 'ru' | 'zh';
 
 interface LanguageContextType {
   language: Language;
@@ -25,8 +25,8 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  // Initialize with a default value to avoid undefined issues
-  const [language, setLanguageState] = useState<Language>('en');
+  // Default to Hebrew as per authentic Wealthstone website
+  const [language, setLanguageState] = useState<Language>('he');
   const [isInitialized, setIsInitialized] = useState(false);
 
   // Load saved language preference on mount
@@ -35,11 +35,8 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     if (savedLang && translations[savedLang]) {
       setLanguageState(savedLang);
     } else {
-      // Detect browser language preference
-      const browserLang = navigator.language.split('-')[0] as Language;
-      if (translations[browserLang]) {
-        setLanguageState(browserLang);
-      }
+      // Keep Hebrew as default instead of detecting browser language
+      setLanguageState('he');
     }
     setIsInitialized(true);
   }, []);
@@ -71,7 +68,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   // Don't render until initialized to avoid hydration issues
   if (!isInitialized) {
     return <div className="min-h-screen bg-obsidian flex items-center justify-center">
-      <div className="text-accent-gold">Loading...</div>
+      <div className="text-accent-gold">טוען...</div>
     </div>;
   }
 

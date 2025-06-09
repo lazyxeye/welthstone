@@ -3,20 +3,21 @@ import { Globe, ChevronDown } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const LanguageSelector = () => {
-  const { language, setLanguage, t, isRTL } = useLanguage();
+  const { language, setLanguage, isRTL } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const languages = [
-    { code: 'en' as const, name: 'English', flag: '🇺🇸' },
     { code: 'he' as const, name: 'עברית', flag: '🇮🇱' },
+    { code: 'en' as const, name: 'English', flag: '🇺🇸' },
     { code: 'fr' as const, name: 'Français', flag: '🇫🇷' },
     { code: 'ru' as const, name: 'Русский', flag: '🇷🇺' },
+    { code: 'zh' as const, name: '中文', flag: '🇨🇳' },
   ];
 
   const currentLanguage = languages.find(lang => lang.code === language);
 
-  const handleLanguageChange = (langCode: 'en' | 'he' | 'fr' | 'ru') => {
+  const handleLanguageChange = (langCode: 'en' | 'he' | 'fr' | 'ru' | 'zh') => {
     console.log('Changing language from', language, 'to', langCode);
     setLanguage(langCode);
     setIsOpen(false);

@@ -23,10 +23,9 @@ const Header = () => {
   };
 
   const navItems = [
-    t.navigation.about,
-    t.navigation.strategies,
-    t.navigation.portfolio,
-    t.navigation.insights,
+    t.navigation.home,
+    t.navigation.philosophy,
+    t.navigation.investmentAreas,
     t.navigation.contact
   ];
 
@@ -51,7 +50,9 @@ const Header = () => {
                 className="group-hover:brightness-110 transition-all duration-300"
               />
             </div>
-            <h1 className="ml-3 text-xl font-bold text-text-primary group-hover:text-accent-gold transition-colors duration-300">
+            <h1 className={`text-xl font-bold text-text-primary group-hover:text-accent-gold transition-colors duration-300 ${
+              isRTL ? 'mr-3' : 'ml-3'
+            }`}>
               {t.common.wealthstone}
             </h1>
           </div>
