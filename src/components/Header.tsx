@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import LanguageSelector from './LanguageSelector';
+import WealthstoneLogo from './logos/WealthstoneLogo';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,11 +42,16 @@ const Header = () => {
       >
         <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
           {/* Logo */}
-          <div className={`flex items-center space-x-3 group cursor-pointer ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`}>
-            <div className="p-2 rounded-xl bg-gradient-to-br from-accent-gold/20 to-accent-gold/5 group-hover:from-accent-gold/30 group-hover:to-accent-gold/10 transition-all duration-300">
-              <Shield className="w-8 h-8 text-accent-gold group-hover:scale-110 transition-transform duration-300" />
+          <div className={`flex items-center group cursor-pointer ${isRTL ? 'flex-row-reverse' : ''}`}>
+            <div className="group-hover:scale-110 transition-transform duration-300">
+              <WealthstoneLogo 
+                variant="square" 
+                width={40} 
+                height={40}
+                className="group-hover:brightness-110 transition-all duration-300"
+              />
             </div>
-            <h1 className="text-2xl font-bold text-accent-gold group-hover:text-white transition-colors duration-300">
+            <h1 className="ml-3 text-xl font-bold text-text-primary group-hover:text-accent-gold transition-colors duration-300">
               {t.common.wealthstone}
             </h1>
           </div>

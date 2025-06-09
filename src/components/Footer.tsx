@@ -1,6 +1,6 @@
 import React from 'react';
-import { Shield } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import WealthstoneLogo from './logos/WealthstoneLogo';
 
 const Footer = () => {
   const { t, isRTL } = useLanguage();
@@ -13,10 +13,13 @@ const Footer = () => {
         }`}>
           {/* Logo */}
           <div className={`flex items-center space-x-3 ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`}>
-            <div className="p-2 rounded-xl bg-gradient-to-br from-accent-gold/20 to-accent-gold/5">
-              <Shield className="w-6 h-6 text-accent-gold" />
-            </div>
-            <h2 className="text-xl font-bold text-accent-gold">
+            <WealthstoneLogo 
+              variant="square" 
+              width={32} 
+              height={32}
+              className="hover:brightness-110 transition-all duration-300"
+            />
+            <h2 className="text-lg font-bold text-accent-gold">
               {t.common.wealthstone}
             </h2>
           </div>
